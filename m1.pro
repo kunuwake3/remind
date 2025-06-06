@@ -4,9 +4,9 @@
 #
 #-------------------------------------------------
 
-QT       += core widgets gui sql multimedia
+QT += core widgets gui sql multimedia
 
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+#greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = m1
 TEMPLATE = app
