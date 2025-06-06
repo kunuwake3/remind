@@ -12,18 +12,17 @@ jobs:
     runs-on: windows-latest
 
     steps:
-- name: Checkout code
-  uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-- name: Install Qt 5.15.2 (MinGW)
-  uses: jurplel/install-qt-action@v3
-  with:
-    version: 5.15.2
-    arch: win64_mingw81
-    cache: true
+      - name: Install Qt 5.15.2 (MinGW)
+        uses: jurplel/install-qt-action@v3
+        with:
+          version: 5.15.2
+          arch: win64_mingw81
+          cache: true
 
-
-      - name: Generate all UI headers (workaround for CI)
+      - name: Force generate all UI headers
         shell: cmd
         run: |
           uic editcountry.ui -o ui_editcountry.h
@@ -41,10 +40,14 @@ jobs:
           qmake m3.pro
           mingw32-make release
 
-      - name: Deploy Qt DLLs for portable .exe
+      - name: Deploy Qt DLLs
         shell: cmd
         run: |
           windeployqt release\remind.exe
 
-      - name: Archive Windows binary and dependencies
-        uses: actions
+      - name: Archive Windows binary
+        uses: actions/upload-artifact@v4
+        with:
+          name: remind-win-binary
+          path: |
+            release\*
