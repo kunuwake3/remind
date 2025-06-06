@@ -22,17 +22,11 @@ jobs:
           arch: win64_mingw81
           cache: true
 
-      - name: Verify Qt tools
-        run: |
-          qmake -v
-          mingw32-make --version
-          windeployqt --version
-
-      - name: List include folders (diagnostics)
+      - name: List Qt include folders (diagnostics)
         shell: cmd
         run: |
-          dir ..\Qt\5.15.2\mingw81_64\include
-          dir ..\Qt\5.15.2\mingw81_64\include\QtWidgets
+          dir D:\a\remind\Qt\5.15.2\mingw81_64\include
+          dir D:\a\remind\Qt\5.15.2\mingw81_64\include\QtWidgets
 
       - name: Build with qmake & mingw32-make
         shell: cmd
@@ -43,7 +37,7 @@ jobs:
       - name: Deploy Qt DLLs
         shell: cmd
         run: |
-          windeployqt release\your_app.exe
+          windeployqt release\m3.exe
 
       - name: Archive Windows binary
         uses: actions/upload-artifact@v4
