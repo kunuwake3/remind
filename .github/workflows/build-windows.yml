@@ -12,15 +12,16 @@ jobs:
     runs-on: windows-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+- name: Checkout code
+  uses: actions/checkout@v4
 
-      - name: Install Qt 5.15.2 (MinGW)
-        uses: jurplel/install-qt-action@v3
-        with:
-          version: 5.15.2
-          arch: win64_mingw81
-          cache: true
+- name: Install Qt 5.15.2 (MinGW)
+  uses: jurplel/install-qt-action@v3
+  with:
+    version: 5.15.2
+    arch: win64_mingw81
+    cache: true
+
 
       - name: Generate all UI headers (workaround for CI)
         shell: cmd
