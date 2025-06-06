@@ -257,8 +257,8 @@ void EditRec::on_OkBtn_clicked(){
             return;
         }
         r0 = ui->textedit->toPlainText();
-        if (r0.length() > 255) {
-            QMessageBox::information(this, "Information","Too long text in information box. Limit 255 characters.");
+        if (r0.length() > 2255) {
+            QMessageBox::information(this, "Information","Too long text in information box. Limit 2255 characters.");
             return;
         }
 
