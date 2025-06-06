@@ -6,8 +6,7 @@
 #include <QPalette>
 #include <QStyleFactory>
 
-int main(int argc, char *argv[])
-{
+int main(int argc, char *argv[]) {
     QApplication a(argc, argv);
 
     // Включить стиль Fusion (одинаково на всех платформах)
@@ -31,12 +30,11 @@ int main(int argc, char *argv[])
 
     a.setPalette(darkPalette);
 
-
-int main(int argc, char *argv[]) {
-    QApplication a(argc, argv);
     MainWindow w;
+    w.resize(1200, 900); // увеличиваем стартовый размер окна
     w.show();
 
     QTimer::singleShot(300, &w, SLOT(Start_m1()));
     return a.exec();
 }
+
