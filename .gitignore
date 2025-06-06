@@ -1,0 +1,24 @@
+# Сгенерированные Qt-файлы
+moc_*.cpp
+moc_*.o
+qrc_*.cpp
+qrc_*.o
+ui_*.h
+*.o
+*.obj
+*.exe
+*.user
+*.pro.user
+*.log
+*.qmlc
+*.jsc
+*.qrc
+*.autosave
+
+# moc_predefs.h — именно его тоже игнорировать!
+moc_predefs.h
+
+# build/ папки
+build-*/
+release/
+debug/
