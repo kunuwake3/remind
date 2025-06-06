@@ -10,7 +10,7 @@
 int main(int argc, char *argv[]) {
 
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
-    qputenv("QT_SCALE_FACTOR", QByteArray("1.33")); // масштаб на 133%
+    qputenv("QT_SCALE_FACTOR", QByteArray("1.2")); // масштаб на 120%
     
     QApplication a(argc, argv);
 
