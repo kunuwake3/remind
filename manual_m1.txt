@@ -1,0 +1,20 @@
+apt install qt5-qmake
+sudo apt-get install libqt5quickcontrols2-5 libqt5multimedia5 libqt5webengine5 libqt5quick5 libqt5qml5
+sudo apt install qt5-qmake
+sudo apt install qt5
+sudo apt install qt5-default 
+sudo apt install qt5-qmake-bin 
+qt5 -v
+apt-get install qcreator qt5-default
+sudo apt-get install qcreator qt5-default
+udo apt-get install qtcreator qt5-default
+sudo apt-get install qtcreator qt5-default
+apt get install libqt5sql5-mysql
+apt install libqt5sql5-mysql
+sudo apt install libqt5sql5-mysql
+./configure -sql-mysql
+sudo apt install libmysql-dev
+apt install sqlite3
+sudo apt install sqlite3
+sudo qmake
+./m1
