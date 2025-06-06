@@ -5,8 +5,13 @@
 #include <QMessageBox>
 #include <QPalette>
 #include <QStyleFactory>
+#include <QScreen>
 
 int main(int argc, char *argv[]) {
+
+    QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
+    qputenv("QT_SCALE_FACTOR", QByteArray("1.5")); // масштаб на 150%
+    
     QApplication a(argc, argv);
 
     // Включить стиль Fusion (одинаково на всех платформах)
