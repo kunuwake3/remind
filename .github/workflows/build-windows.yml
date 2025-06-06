@@ -15,7 +15,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Install Qt 5.15.2 (MSVC2019, modules default)
+      - name: Install Qt 5.15.2 (MSVC2019)
         uses: jurplel/install-qt-action@v3
         with:
           version: 5.15.2
@@ -24,9 +24,10 @@ jobs:
       - name: Setup MSVC Developer Command Prompt
         uses: ilammy/msvc-dev-cmd@v1
 
-      - name: Build with qmake & nmake
+      - name: Build with correct Qt qmake & nmake
         run: |
-          qmake m3.pro
+          set PATH=D:\a\remind\Qt\5.15.2\msvc2019_64\bin;%PATH%
+          D:\a\remind\Qt\5.15.2\msvc2019_64\bin\qmake.exe m3.pro
           nmake
 
       - name: Archive Windows binary
