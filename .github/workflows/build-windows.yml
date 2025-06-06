@@ -12,6 +12,8 @@ jobs:
     runs-on: windows-latest
 
     steps:
+
+    
       - name: Checkout code
         uses: actions/checkout@v4
 
@@ -21,7 +23,13 @@ jobs:
           version: 5.15.2
           arch: win64_mingw81
           cache: true
-
+      - name: Clean build artifacts
+        shell: bash
+        run: |
+        rm -f ui_*.h
+        rm -f Makefile*
+        rm -rf release
+        
       - name: Force generate all UI headers
         shell: cmd
         run: |
