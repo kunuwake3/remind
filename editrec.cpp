@@ -174,7 +174,7 @@ void EditRec::on_textedit_textChanged() {
     edited = 10;
     int nums = ui->textedit->toPlainText().length();
     QFont fnt = this->font();
-    if (nums > 254) {
+    if (nums > 22549) {
         if (black_theme == 0) ui->textedit->setStyleSheet("QPlainTextEdit {background-color: #FFD0D0;}");
         if (black_theme == 1) ui->textedit->setStyleSheet("QPlainTextEdit {background-color: #D09090; color: black;}");
         ui->textedit->setFont(fnt);
@@ -210,8 +210,8 @@ void EditRec::on_OkBtn_clicked(){
             return;
         }
         r0 = ui->textedit->toPlainText();
-        if (r0.length() > 2550) {
-            QMessageBox::information(this, "Information","Too long text in information box. Limit 2550 characters.");
+        if (r0.length() > 22550) {
+            QMessageBox::information(this, "Information","Too long text in information box. Limit 22550 characters.");
             return;
         }
 
@@ -257,8 +257,8 @@ void EditRec::on_OkBtn_clicked(){
             return;
         }
         r0 = ui->textedit->toPlainText();
-        if (r0.length() > 2255) {
-            QMessageBox::information(this, "Information","Too long text in information box. Limit 2255 characters.");
+        if (r0.length() > 22550) {
+            QMessageBox::information(this, "Information","Too long text in information box. Limit 22550 characters.");
             return;
         }
 
