@@ -15,25 +15,23 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Install Qt 5.15.2 (MSVC2019)
+      - name: Install Qt 5.15.2 (MSVC2019) + cache
         uses: jurplel/install-qt-action@v3
         with:
           version: 5.15.2
           arch: win64_msvc2019_64
+          cache: true
 
       - name: Setup MSVC Developer Command Prompt
         uses: ilammy/msvc-dev-cmd@v1
 
-      - name: Build with correct Qt qmake & nmake
+      - name: Build Release
         shell: cmd
         run: |
-          D:\a\remind\Qt\5.15.2\msvc2019_64\bin\qmake.exe m3.pro
-          nmake
+          qmake m3.pro
+          nmake release
 
-      - name: Archive Windows binary
-        uses: actions/upload-artifact@v4
-        with:
-          name: m3-win-binary
-          path: |
-            release\*.exe
-            *.exe
+      - name: Deploy Qt DLLs
+        shell: cmd
+        run: |
+          windeployqt re
