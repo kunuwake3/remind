@@ -1,0 +1,18 @@
+<RCC>
+    <qresource prefix="/img">
+        <file>m1.png</file>
+        <file>m2.png</file>
+        <file>m3.png</file>
+        <file>m4.png</file>
+        <file>m5.png</file>
+        <file>m9.png</file>
+        <file>m8.png</file>
+        <file>m7.png</file>
+        <file>m6.png</file>
+        <file>m10.png</file>
+        <file>m11.png</file>
+    </qresource>
+    <qresource prefix="/snd">
+        <file>snd1.wav</file>
+    </qresource>
+</RCC>
