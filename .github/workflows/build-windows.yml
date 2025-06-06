@@ -15,12 +15,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Install Qt 5.15.2 + Widgets + SQL
+      - name: Install Qt 5.15.2 (MSVC2019, modules default)
         uses: jurplel/install-qt-action@v3
         with:
           version: 5.15.2
           arch: win64_msvc2019_64
-          modules: 'qtbase qttools qtsql'
 
       - name: Setup MSVC Developer Command Prompt
         uses: ilammy/msvc-dev-cmd@v1
