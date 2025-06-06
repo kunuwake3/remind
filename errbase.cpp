@@ -72,7 +72,7 @@ void errbase::on_pushButton_2_clicked() {
     db1.open();
 
     query = QSqlQuery(db1);
-    QString dt11 = "CREATE TABLE `DATA`( `id` Integer NOT NULL PRIMARY KEY AUTOINCREMENT, `ip` Char(80) NOT NULL, `country` Char(50) NOT NULL, `login` Char(200) DEFAULT NULL, `pass1` Char(200) NOT NULL DEFAULT '', `date1` DateTime NOT NULL, `date2` DateTime NOT NULL, `price` Char(50) NOT NULL DEFAULT '0', `cur` Char(50) NOT NULL, `url1` Integer NOT NULL DEFAULT 0, `login2` Char(200) NOT NULL DEFAULT '', `passw2` Char(200) NOT NULL DEFAULT '', `login3` Char(200) NOT NULL DEFAULT '', `passw3` Char(200) NOT NULL DEFAULT '', `info` Char(450) NOT NULL DEFAULT '');";
+    QString dt11 = "CREATE TABLE `DATA`( `id` Integer NOT NULL PRIMARY KEY AUTOINCREMENT, `ip` Char(80) NOT NULL, `country` Char(50) NOT NULL, `login` Char(200) DEFAULT NULL, `pass1` Char(200) NOT NULL DEFAULT '', `date1` DateTime NOT NULL, `date2` DateTime NOT NULL, `price` Char(50) NOT NULL DEFAULT '0', `cur` Char(50) NOT NULL, `url1` Integer NOT NULL DEFAULT 0, `login2` Char(200) NOT NULL DEFAULT '', `passw2` Char(200) NOT NULL DEFAULT '', `login3` Char(200) NOT NULL DEFAULT '', `passw3` Char(200) NOT NULL DEFAULT '', `info` TEXT NOT NULL DEFAULT '');";
     query.exec(dt11);
     dt11 = "CREATE UNIQUE INDEX 'Data_id' ON 'DATA'('id');";
     query.exec(dt11);
