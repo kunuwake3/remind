@@ -12,8 +12,6 @@ jobs:
     runs-on: windows-latest
 
     steps:
-
-    
       - name: Checkout code
         uses: actions/checkout@v4
 
@@ -23,15 +21,16 @@ jobs:
           version: 5.15.2
           arch: win64_mingw81
           cache: true
+
       - name: Clean build artifacts
         shell: bash
         run: |
-        rm -f ui_*.h
-        rm -f Makefile*
-        rm -rf release
-        
-      - name: Force generate all UI headers
-        shell: cmd
+          rm -f ui_*.h
+          rm -f Makefile*
+          rm -rf release
+
+      - name: Generate all UI headers
+        shell: bash
         run: |
           uic editcountry.ui -o ui_editcountry.h
           uic editcur.ui -o ui_editcur.h
@@ -43,19 +42,19 @@ jobs:
           uic setup.ui -o ui_setup.h
 
       - name: Build with qmake & mingw32-make
-        shell: cmd
+        shell: bash
         run: |
-          qmake m3.pro
+          qmake m1.pro
           mingw32-make release
 
       - name: Deploy Qt DLLs
-        shell: cmd
+        shell: bash
         run: |
-          windeployqt release\remind.exe
+          windeployqt release/m1.exe
 
       - name: Archive Windows binary
         uses: actions/upload-artifact@v4
         with:
-          name: remind-win-binary
+          name: m1-win-binary
           path: |
-            release\*
+            release/*
