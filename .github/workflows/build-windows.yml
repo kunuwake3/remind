@@ -15,27 +15,47 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Install Qt 5.15.2 (MinGW, with cache)
+      - name: Install Qt 5.15.2 (MinGW)
         uses: jurplel/install-qt-action@v3
         with:
           version: 5.15.2
           arch: win64_mingw81
+          modules: qtbase qttools
           cache: true
 
-      - name: Build Release with qmake & mingw32-make
-        shell: cmd
+      - name: Add MinGW to PATH
+        run: echo "$env:Path" >> $env:GITHUB_PATH
+        shell: powershell
+
+      - name: Verify Qt installation
         run: |
-          qmake m3.pro
+          qmake -v
+          g++ --version
+          windeployqt --version
+
+      - name: Generate UI headers
+        run: |
+          uic editcountry.ui -o ui_editcountry.h
+          uic editcur.ui -o ui_editcur.h
+          uic editprv.ui -o ui_editprv.h
+          uic editrec.ui -o ui_editrec.h
+          uic errbase.ui -o ui_errbase.h
+          uic mainwindow.ui -o ui_mainwindow.h
+          uic messageslist.ui -o ui_messageslist.h
+          uic setup.ui -o ui_setup.h
+
+      - name: Build with Qt
+        run: |
+          qmake m3.pro "QT += widgets sql"
           mingw32-make release
 
-      - name: Deploy Qt DLLs
-        shell: cmd
-        run: |
-          windeployqt release\your_app.exe
+      - name: Deploy dependencies
+        run: windeployqt release/m3.exe
 
       - name: Archive Windows binary
         uses: actions/upload-artifact@v4
         with:
           name: m3-win-binary
           path: |
-            release\*
+            release/*.exe
+            release/*.dll
