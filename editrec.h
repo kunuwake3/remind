@@ -61,6 +61,16 @@ private slots:
 
     void on_pushButton_15_clicked();
 
+    void on_pushButton_copyUserServer_clicked();
+    void on_pushButton_copyUserServerPassword_clicked();
+    void on_pushButton_showUserServerPassword_clicked();
+
+    void on_pushButton_copyMainLuksServer_clicked();
+    void on_pushButton_copySecondLuksServer_clicked();
+
+    void on_pushButton_showMainLuksServer_clicked();
+    void on_pushButton_showSecondLuksServer_clicked();
+
 private:
     Ui::EditRec *ui;
 
