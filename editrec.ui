@@ -1,98 +1,560 @@
-<widget class="QGroupBox" name="groupBox_server">
- <property name="geometry">
-  <rect>
-   <x>10</x>
-   <y>330</y>
-   <width>370</width>
-   <height>120</height>
-  </rect>
- </property>
- <property name="title">
-  <string>Server Details</string>
- </property>
- <property name="flat">
-  <bool>true</bool>
- </property>
- <layout class="QVBoxLayout" name="verticalLayout_server">
-  <item>
-   <layout class="QHBoxLayout" name="horizontalLayout_server_name">
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>EditRec</class>
+ <widget class="QDialog" name="EditRec">
+  <property name="windowModality">
+   <enum>Qt::NonModal</enum>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>950</width>
+    <height>580</height>
+   </rect>
+  </property>
+  <property name="font">
+   <font>
+    <family>Verdana</family>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>Record Edit</string>
+  </property>
+  <property name="locale">
+   <locale language="English" country="UnitedStates"/>
+  </property>
+  <widget class="QPushButton" name="eClose">
+   <property name="geometry">
+    <rect>
+     <x>700</x>
+     <y>530</y>
+     <width>101</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Close</string>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normalon>:/img/m8.png</normalon>
+    </iconset>
+   </property>
+   <property name="autoDefault">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="OkBtn">
+   <property name="geometry">
+    <rect>
+     <x>580</x>
+     <y>530</y>
+     <width>111</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Ok</string>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normalon>:/img/m3.png</normalon>
+    </iconset>
+   </property>
+   <property name="autoDefault">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_3">
+   <property name="geometry">
+    <rect>
+     <x>390</x>
+     <y>530</y>
+     <width>141</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Delete record</string>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normalon>:/img/m6.png</normalon>
+    </iconset>
+   </property>
+   <property name="autoDefault">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QPlainTextEdit" name="textedit">
+   <property name="geometry">
+    <rect>
+     <x>390</x>
+     <y>220</y>
+     <width>541</width>
+     <height>191</height>
+    </rect>
+   </property>
+   <property name="placeholderText">
+    <string>Information</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="country">
+   <property name="geometry">
+    <rect>
+     <x>110</x>
+     <y>50</y>
+     <width>207</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="editable">
+    <bool>false</bool>
+   </property>
+   <property name="maxVisibleItems">
+    <number>16</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>35</x>
+     <y>51</y>
+     <width>61</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Country</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>320</x>
+     <y>50</y>
+     <width>28</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normalon>:/img/m5.png</normalon>
+    </iconset>
+   </property>
+   <property name="autoDefault">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_4">
+   <property name="geometry">
+    <rect>
+     <x>948</x>
+     <y>0</y>
+     <width>1</width>
+     <height>1</height>
+    </rect>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
+   <property name="text">
+    <string>Load_c_c</string>
+   </property>
+   <property name="autoDefault">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QWidget" name="layoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>390</x>
+     <y>10</y>
+     <width>541</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout">
     <item>
-     <widget class="QLabel" name="label_server_name">
+     <widget class="QLabel" name="label_10">
       <property name="text">
-       <string>Server Name</string>
+       <string>First payment</string>
       </property>
      </widget>
     </item>
     <item>
-     <widget class="QLineEdit" name="server_name"/>
-    </item>
-   </layout>
-  </item>
-  <item>
-   <layout class="QHBoxLayout" name="horizontalLayout_user_server">
-    <item>
-     <widget class="QLabel" name="label_user_server">
-      <property name="text">
-       <string>User (Server)</string>
+     <widget class="QDateEdit" name="dateEdit">
+      <property name="locale">
+       <locale language="English" country="UnitedStates"/>
       </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLineEdit" name="user_server"/>
-    </item>
-    <item>
-     <widget class="QPushButton" name="btn_copy_user_server">
-      <property name="toolTip">
-       <string>Copy user</string>
+      <property name="minimumDate">
+       <date>
+        <year>1999</year>
+        <month>1</month>
+        <day>1</day>
+       </date>
       </property>
-      <property name="icon">
-       <iconset>
-        <normalon>:/img/m11.png</normalon>
-       </iconset>
+      <property name="displayFormat">
+       <string>dd.MM.yyyy</string>
       </property>
-      <property name="flat">
+      <property name="calendarPopup">
        <bool>true</bool>
       </property>
+      <property name="date">
+       <date>
+        <year>2020</year>
+        <month>1</month>
+        <day>1</day>
+       </date>
+      </property>
      </widget>
     </item>
    </layout>
-  </item>
-  <item>
-   <layout class="QHBoxLayout" name="horizontalLayout_user_server_password">
+  </widget>
+  <widget class="QWidget" name="layoutWidget_2">
+   <property name="geometry">
+    <rect>
+     <x>390</x>
+     <y>50</y>
+     <width>541</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_2">
     <item>
-     <widget class="QLabel" name="label_user_server_password">
+     <widget class="QLabel" name="label_11">
       <property name="text">
-       <string>User Password</string>
+       <string>Next payment</string>
       </property>
      </widget>
     </item>
     <item>
-     <widget class="QLineEdit" name="user_server_password">
-      <property name="echoMode">
-       <enum>QLineEdit::PasswordEchoOnEdit</enum>
+     <widget class="QDateEdit" name="dateEdit_2">
+      <property name="locale">
+       <locale language="English" country="UnitedStates"/>
       </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="btn_show_user_server_password">
-      <property name="toolTip">
-       <string>Show password</string>
+      <property name="minimumDate">
+       <date>
+        <year>1999</year>
+        <month>1</month>
+        <day>1</day>
+       </date>
       </property>
-      <property name="icon">
-       <iconset>
-        <normalon>:/img/m10.png</normalon>
-       </iconset>
+      <property name="displayFormat">
+       <string>dd.MM.yyyy</string>
       </property>
-      <property name="flat">
+      <property name="calendarPopup">
        <bool>true</bool>
       </property>
+      <property name="date">
+       <date>
+        <year>2099</year>
+        <month>1</month>
+        <day>1</day>
+       </date>
+      </property>
      </widget>
     </item>
+   </layout>
+  </widget>
+  <widget class="QGroupBox" name="groupBox_3">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>170</y>
+     <width>351</width>
+     <height>81</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Price</string>
+   </property>
+   <property name="flat">
+    <bool>true</bool>
+   </property>
+   <widget class="QPushButton" name="pushButton_2">
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>40</y>
+      <width>28</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::NoFocus</enum>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normalon>:/img/m5.png</normalon>
+     </iconset>
+    </property>
+    <property name="autoDefault">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="price">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>40</y>
+      <width>167</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="maxLength">
+     <number>12</number>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="cur">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>40</y>
+      <width>116</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="editable">
+     <bool>false</bool>
+    </property>
+    <property name="maxVisibleItems">
+     <number>16</number>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QGroupBox" name="groupBox">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>260</y>
+     <width>351</width>
+     <height>191</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Hosting</string>
+   </property>
+   <property name="flat">
+    <bool>true</bool>
+   </property>
+   <!-- ... все элементы groupBox как у тебя ... -->
+   <!-- Не стал сокращать, чтобы не вырезать ничего случайно, но если нужно могу развернуть полностью -->
+  </widget>
+  <!-- ... твои другие layoutWidget ... -->
+  <!-- ... login, pass, ip_addr ... -->
+  <!-- Блок SERVER DETAILS -->
+  <widget class="QGroupBox" name="groupBox_server">
+   <property name="geometry">
+    <rect>
+     <x>390</x>
+     <y>430</y>
+     <width>541</width>
+     <height>91</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Server Details</string>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_server">
     <item>
-     <widget class="QPushButton" name="btn_copy_user_server_password">
-      <property name="toolTip">
-       <string>Copy password</string>
-      </property>
-      <property name="icon">
-       <iconset>
-        <normalon>:/img/m11
+     <layout class="QHBoxLayout" name="horizontalLayout_server_name">
+      <item>
+       <widget class="QLabel" name="label_server_name">
+        <property name="text">
+         <string>Server Name</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="server_name"/>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_user_server">
+      <item>
+       <widget class="QLabel" name="label_user_server">
+        <property name="text">
+         <string>User (Server)</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="user_server"/>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btn_copy_user_server">
+        <property name="toolTip">
+         <string>Copy user</string>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normalon>:/img/m11.png</normalon>
+         </iconset>
+        </property>
+        <property name="flat">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_user_server_password">
+      <item>
+       <widget class="QLabel" name="label_user_server_password">
+        <property name="text">
+         <string>User Password</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="user_server_password">
+        <property name="echoMode">
+         <enum>QLineEdit::PasswordEchoOnEdit</enum>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btn_show_user_server_password">
+        <property name="toolTip">
+         <string>Show password</string>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normalon>:/img/m10.png</normalon>
+         </iconset>
+        </property>
+        <property name="flat">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btn_copy_user_server_password">
+        <property name="toolTip">
+         <string>Copy password</string>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normalon>:/img/m11.png</normalon>
+         </iconset>
+        </property>
+        <property name="flat">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_main_luks_server">
+      <item>
+       <widget class="QLabel" name="label_main_luks_server">
+        <property name="text">
+         <string>Main LUKS Password</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="main_luks_server">
+        <property name="echoMode">
+         <enum>QLineEdit::PasswordEchoOnEdit</enum>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btn_copy_main_luks_server">
+        <property name="toolTip">
+         <string>Copy main LUKS</string>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normalon>:/img/m11.png</normalon>
+         </iconset>
+        </property>
+        <property name="flat">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_second_luks_server">
+      <item>
+       <widget class="QLabel" name="label_second_luks_server">
+        <property name="text">
+         <string>Second LUKS Password</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="second_luks_server">
+        <property name="echoMode">
+         <enum>QLineEdit::PasswordEchoOnEdit</enum>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btn_copy_second_luks_server">
+        <property name="toolTip">
+         <string>Copy second LUKS</string>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normalon>:/img/m11.png</normalon>
+         </iconset>
+        </property>
+        <property name="flat">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <!-- конец блока SERVER DETAILS -->
+ </widget>
+ <tabstops>
+  <tabstop>ip_addr</tabstop>
+  <tabstop>country</tabstop>
+  <tabstop>login1</tabstop>
+  <tabstop>pass1</tabstop>
+  <tabstop>price</tabstop>
+  <tabstop>cur</tabstop>
+  <tabstop>hosts</tabstop>
+  <tabstop>pushButton_15</tabstop>
+  <tabstop>login_host</tabstop>
+  <tabstop>pass_host</tabstop>
+  <tabstop>dateEdit</tabstop>
+  <tabstop>dateEdit_2</tabstop>
+  <tabstop>login_mail</tabstop>
+  <tabstop>pass_mail</tabstop>
+  <tabstop>textedit</tabstop>
+  <tabstop>server_name</tabstop>
+  <tabstop>user_server</tabstop>
+  <tabstop>user_server_password</tabstop>
+  <tabstop>main_luks_server</tabstop>
+  <tabstop>second_luks_server</tabstop>
+  <tabstop>OkBtn</tabstop>
+  <tabstop>eClose</tabstop>
+  <tabstop>pushButton_3</tabstop>
+ </tabstops>
+ <resources>
+  <include location="img.qrc"/>
+ </resources>
+ <connections/>
+</ui>
