@@ -72,15 +72,29 @@ void errbase::on_pushButton_2_clicked() {
     db1.open();
 
     query = QSqlQuery(db1);
-    QString dt11 = "CREATE TABLE `DATA`( `id` Integer NOT NULL PRIMARY KEY AUTOINCREMENT, `ip` Char(80) NOT NULL, `country` Char(50) NOT NULL, `login` Char(200) DEFAULT NULL, `pass1` Char(200) NOT NULL DEFAULT '', `date1` DateTime NOT NULL, `date2` DateTime NOT NULL, `price` Char(50) NOT NULL DEFAULT '0', `cur` Char(50) NOT NULL, `url1` Integer NOT NULL DEFAULT 0, `login2` Char(200) NOT NULL DEFAULT '', `passw2` Char(200) NOT NULL DEFAULT '', `login3` Char(200) NOT NULL DEFAULT '', `passw3` Char(200) NOT NULL DEFAULT '', `info` TEXT NOT NULL DEFAULT '');";
-    query.exec(dt11);
-    dt11 = "CREATE UNIQUE INDEX 'Data_id' ON 'DATA'('id');";
-    query.exec(dt11);
-    dt11 = "CREATE TABLE `HOST` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `name` Char(100), `link` Char(120), `info` Char(250));";
-    query.exec(dt11);
-    dt11 = "CREATE TABLE `COUNTRY`(`id` Integer NOT NULL PRIMARY KEY AUTOINCREMENT, `name` Char(50) NOT NULL);";
-    query.exec(dt11);
-    dt11 = "CREATE TABLE `CUR`(`id` Integer NOT NULL PRIMARY KEY AUTOINCREMENT, `name` Char(50) NOT NULL);";
+   QString dt11 = "CREATE TABLE `DATA`( "
+    "`id` Integer NOT NULL PRIMARY KEY AUTOINCREMENT, "
+    "`ip` Char(80) NOT NULL, "
+    "`country` Char(50) NOT NULL, "
+    "`login` Char(200) DEFAULT NULL, "
+    "`pass1` Char(200) NOT NULL DEFAULT '', "
+    "`date1` DateTime NOT NULL, "
+    "`date2` DateTime NOT NULL, "
+    "`price` Char(50) NOT NULL DEFAULT '0', "
+    "`cur` Char(50) NOT NULL, "
+    "`url1` Integer NOT NULL DEFAULT 0, "
+    "`login2` Char(200) NOT NULL DEFAULT '', "
+    "`passw2` Char(200) NOT NULL DEFAULT '', "
+    "`login3` Char(200) NOT NULL DEFAULT '', "
+    "`passw3` Char(200) NOT NULL DEFAULT '', "
+    "`info` TEXT NOT NULL DEFAULT '', "
+    "`user_server` Char(200) NOT NULL DEFAULT '', "
+    "`user_server_password` Char(200) NOT NULL DEFAULT '', "
+    "`main_luks_server` Char(200) NOT NULL DEFAULT '', "
+    "`second_luks_server` Char(200) NOT NULL DEFAULT '', "
+    "`server_name` Char(200) NOT NULL DEFAULT '' "
+    ");";
+
     if (query.exec(dt11)) {
         db1.close();
         QMessageBox::information(this, "Information","The Database has been created. Click OK to continue.");
