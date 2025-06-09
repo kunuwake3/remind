@@ -1414,6 +1414,11 @@
   <tabstop>login_mail</tabstop>
   <tabstop>pass_mail</tabstop>
   <tabstop>textedit</tabstop>
+  <tabstop>server_name</tabstop>
+  <tabstop>user_server</tabstop>
+  <tabstop>user_server_password</tabstop>
+  <tabstop>main_luks_server</tabstop>
+  <tabstop>second_luks_server</tabstop>
   <tabstop>OkBtn</tabstop>
   <tabstop>eClose</tabstop>
   <tabstop>pushButton_3</tabstop>
