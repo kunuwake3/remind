@@ -1,60 +1,36 @@
-name: Build Windows Qt5 App
+# .github/workflows/build-release.yml
+name: build-release
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ main, master ]
   pull_request:
-    branches: [ "main" ]
-  workflow_dispatch:
+    branches: [ main, master ]
 
 jobs:
-  build-windows:
-    runs-on: windows-latest
-
+  build:
+    runs-on: ubuntu-latest
+    env:
+      APP_SECRET_KEY: ${{ secrets.APP_SECRET_KEY }}   # <- передаём секрет
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Install Qt 5.15.2 (MinGW)
+      - name: Install Qt 6
         uses: jurplel/install-qt-action@v3
         with:
-          version: 5.15.2
-          arch: win64_mingw81
+          version: 6.7.1
           cache: true
 
-      - name: Clean build artifacts
-        shell: bash
-        run: |
-          rm -f ui_*.h
-          rm -f Makefile*
-          rm -rf release
+      - name: Configure
+        run: cmake -B build -DCMAKE_BUILD_TYPE=Release
 
-      - name: Generate all UI headers
-        shell: bash
-        run: |
-          uic editcountry.ui -o ui_editcountry.h
-          uic editcur.ui -o ui_editcur.h
-          uic editprv.ui -o ui_editprv.h
-          uic editrec.ui -o ui_editrec.h
-          uic errbase.ui -o ui_errbase.h
-          uic mainwindow.ui -o ui_mainwindow.h
-          uic messageslist.ui -o ui_messageslist.h
-          uic setup.ui -o ui_setup.h
+      - name: Build
+        run: cmake --build build -j$(nproc)
 
-      - name: Build with qmake & mingw32-make
-        shell: bash
-        run: |
-          qmake m1.pro
-          mingw32-make release
+      - name: Run unit tests
+        run: ctest --test-dir build --output-on-failure
 
-      - name: Deploy Qt DLLs
-        shell: bash
-        run: |
-          windeployqt release/m1.exe
-
-      - name: Archive Windows binary
-        uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v4
         with:
-          name: m1-win-binary
-          path: |
-            release/*
+          name: f3_app-linux
+          path: build/your_app          # поменяйте на фактический бинарь
