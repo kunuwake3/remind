@@ -554,6 +554,22 @@ void EditRec::on_pushButton_copySecondLuksServer_clicked() {
     clipboard->setText(ui->lineEdit_second_luks_server->text());
 }
 
+void EditRec::on_pushButton_showUserServerPassword_clicked() {
+    auto *line = ui->lineEdit_user_server_password;
+    line->setEchoMode(line->echoMode() == QLineEdit::Password ? QLineEdit::Normal : QLineEdit::Password);
+}
+
+void EditRec::on_pushButton_showMainLuksServer_clicked() {
+    auto *line = ui->lineEdit_main_luks_server;
+    line->setEchoMode(line->echoMode() == QLineEdit::Password ? QLineEdit::Normal : QLineEdit::Password);
+}
+
+void EditRec::on_pushButton_showSecondLuksServer_clicked() {
+    auto *line = ui->lineEdit_second_luks_server;
+    line->setEchoMode(line->echoMode() == QLineEdit::Password ? QLineEdit::Normal : QLineEdit::Password);
+}
+
+
 void EditRec::on_pushButton_6_clicked(){
     // test mode
 
