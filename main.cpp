@@ -36,7 +36,7 @@ int main(int argc, char *argv[]) {
     a.setPalette(darkPalette);
 
     MainWindow w;
-    w.resize(1200, 900); // увеличиваем стартовый размер окна
+    w.resize(1000, 800); // увеличиваем стартовый размер окна
     w.show();
 
     QTimer::singleShot(300, &w, SLOT(Start_m1()));
