@@ -24,7 +24,7 @@ int hide_after_start = 0;
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow) {
     ui->setupUi(this);
-    this->resize(1200, 900);  // (ширина, высота) — под себя!
+    this->resize(1000, 800);  // (ширина, высота) — под себя!
     this -> setTrayIconActions();
     this -> showTrayIcon();
 
