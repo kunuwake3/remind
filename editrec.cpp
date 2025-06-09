@@ -534,6 +534,25 @@ void EditRec::on_pushButton_14_clicked(){
     clipboard->setText(ui->pass_mail->text());
 }
 
+void EditRec::on_pushButton_copyUserServer_clicked() {
+    QClipboard *clipboard = QApplication::clipboard();
+    clipboard->setText(ui->lineEdit_user_server->text());
+}
+
+void EditRec::on_pushButton_copyUserServerPassword_clicked() {
+    QClipboard *clipboard = QApplication::clipboard();
+    clipboard->setText(ui->lineEdit_user_server_password->text());
+}
+
+void EditRec::on_pushButton_copyMainLuksServer_clicked() {
+    QClipboard *clipboard = QApplication::clipboard();
+    clipboard->setText(ui->lineEdit_main_luks_server->text());
+}
+
+void EditRec::on_pushButton_copySecondLuksServer_clicked() {
+    QClipboard *clipboard = QApplication::clipboard();
+    clipboard->setText(ui->lineEdit_second_luks_server->text());
+}
 
 void EditRec::on_pushButton_6_clicked(){
     // test mode
